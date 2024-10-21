@@ -836,7 +836,7 @@ PlayerSettings:
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
-  additionalIl2CppArgs: --linker-flags="/MAP:"D:/Unity/Armored/Assets\Mapfile.map""
+  additionalIl2CppArgs: --linker-flags="/MAP:"D:/GitProject/GitLab/StructureBulletproofVest/Assets\Mapfile.map""
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   gcWBarrierValidation: 0
