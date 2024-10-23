@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PrefabModelsOpen : MonoBehaviour
@@ -9,6 +10,8 @@ public class PrefabModelsOpen : MonoBehaviour
 
     [SerializeField] List<GameObject> interactiveGroupItems;
     [SerializeField] GameObject hideShowPanelButtons;
+
+    [SerializeField] List<GameObject> uiPanels;
 
     //[SerializeField] List<PanelDescriptionOn3DModel> panelDescriptionOn3DModels;
     private int prevIndexGroup = 0;
@@ -47,6 +50,9 @@ public class PrefabModelsOpen : MonoBehaviour
     {
         interactiveGroupItems[prevIndexGroup].transform.GetChild(prevChildIndex).gameObject.SetActive(false);
         interactiveGroupItems[prevIndexGroup].gameObject.SetActive(false);
+
+        GameObject panel = uiPanels.First(obj => obj.activeSelf);
+        panel.SetActive(false);
 
         hideShowPanelButtons.SetActive(false);
         //DiactivatePanel();

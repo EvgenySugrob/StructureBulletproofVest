@@ -7,6 +7,11 @@ public class OutlineManager : MonoBehaviour
     [SerializeField] List<GameObject> pointsAndPanel;
     [SerializeField] Outline outline;
 
+    private void Start()
+    {
+        outline = transform.GetComponent<Outline>();
+    }
+
     public void EnableOutline(bool isActive)
     {
         outline.enabled = isActive;

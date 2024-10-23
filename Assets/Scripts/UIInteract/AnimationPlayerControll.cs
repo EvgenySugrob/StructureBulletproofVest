@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class AnimationPlayerControll : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class AnimationPlayerControll : MonoBehaviour
     [SerializeField] Slider progressBar;
     [Header("Animation list")]
     [SerializeField] List<string> titleAnimation;
+    [SerializeField] List<GameObject> bullets;
 
     private float _defaultSpeed;
     private float _prevTime;
@@ -62,7 +64,10 @@ public class AnimationPlayerControll : MonoBehaviour
 
     public void StartAnimation(int iAnimation)
     {
-        Debug.Log(iAnimation + " " + titleAnimation[iAnimation]);
+        GameObject activeBullet = bullets.FirstOrDefault(obj => obj.activeSelf);
+        activeBullet.SetActive(false);
+
+        bullets[iAnimation].SetActive(true);
         textilBulletAnimator.Play(titleAnimation[iAnimation],-1,0.0f);
     }
 }
